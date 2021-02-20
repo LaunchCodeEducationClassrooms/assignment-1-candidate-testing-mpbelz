@@ -66,11 +66,11 @@ let grade=((totalCorrectAnswer/questions.length)*100) ;
 }
 
 function runProgram() {
-  askForName();
+ // askForName();
   // TODO 1.1c: Ask for candidate's name //
-  console.log(`Hello: ${candidateName}!`);
-  askQuestion();
-  gradeQuiz(this.candidateAnswers);
+ //console.log(`Hello: ${candidateName}!`);//
+  //askQuestion();//
+  //gradeQuiz(this.candidateAnswers);//
 }
 
 // Don't write any code below this line //
