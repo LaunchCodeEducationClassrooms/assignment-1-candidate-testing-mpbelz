@@ -1,16 +1,34 @@
 const input = require('readline-sync');
+let name = input.question("Enter your name: ");
+console.log("Hello " + name + ", let's get started!\n")
+let candidateName = name;
+let candidateAnswer = "[]";
+let question = "Who was the first American woman in space? "
+let correctAnswer = "Sally Ride"
 
-// TODO 2: modify your quiz app to ask 5 questions //
+let questions = ["Who was the first American woman in space? ", "True or false: 5000 meters = 5 kilometers? ", "(5 + 3)/2 * 10 = ? ","Given the array [8, Orbit, Trajectory, 45]what entry is at index 2?", "What is the minimum crew size for the International Space Station(ISS)? "];
+let correctAnswers = ["Sally Ride","True","40","Trajectory","3"];
+let candidateAnswers = [];
+let rightAnswers = 0;
+for (let i = 0; i < questions.length; i++) {
+     candidateAnswers[i] = input.question (questions[i]
+     );
+  if (correctAnswers[i].toLowerCase() === candidateAnswers[i].toLowerCase()){
+    rightAnswers++; 
+  }
+   console.log(`your answer : ${candidateAnswers[i]}`);
+   console.log(`correct answer : ${correctAnswers[i]}\n`);
+}
 
-// TODO 1.1a: Define candidateName // 
-let candidateName;
-// TODO 1.2a: Define question, correctAnswer, and candidateAnswer //
-let question;
-let correctAnswer;
-let candidateAnswer;
-let questions;
-let correctAnswers;
-let candidateAnswers;
+
+let score = rightAnswers / questions.length;
+console.log("Thank you " + name  + ", here is your score:\n");
+console.log("Correct Answers - " + rightAnswers + " out of 5");
+console.log(">>> Overall Grade: " + score * 100 + "% <<<");
+if ([score * 100] >= 80)
+console.log(">>> Status: PASSED!!! <<<");
+else
+console.log(">>> Status: FAILED <<<");
 
 
 function askForName() {
